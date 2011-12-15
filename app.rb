@@ -7,6 +7,6 @@ get '/' do
 end
 
 post '/test' do
-  system("cd #{File.dirname(__FILE__)}/emall; touch sinatratest.md ")
+  system("cd #{File.dirname(__FILE__)}; touch sinatratest.md ")
   'Test if sinatra works' 
 end
