@@ -7,6 +7,9 @@ get '/' do
 end
 
 post '/test' do
-  system("cd #{File.dirname(__FILE__)}; touch sinatratest.md ")
-  'Test if sinatra works' 
+system("cd #{File.dirname(__FILE__)}; date >> test.log")
+
+post '/stagingdeploy' do
+  system("cd #{File.dirname(__FILE__)+"/../emall"};cap staging deploy ")
+  'Cap staging deploy using capistrano' 
 end
