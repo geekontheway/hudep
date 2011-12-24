@@ -14,6 +14,6 @@ system("cd #{File.dirname(__FILE__)}; date >> test.log")
 end
 
 post '/stagingdeploy' do
-  system("cd #{File.dirname(__FILE__)+"/../emall"};cap staging deploy ")
+  system("cd #{File.dirname(__FILE__)+"/../emall"};cap staging deploy:setup;cap staging deploy:cold;cap staging deploy")
   'Cap staging deploy using capistrano' 
 end
